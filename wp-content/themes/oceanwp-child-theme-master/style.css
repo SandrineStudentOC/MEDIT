@@ -12,11 +12,17 @@ Version: 1.0
 
 
 .contact-btn{
-    display:inline-block;
+    color: black !important;
+    display:inline !important;
     background-color:white;
-    padding:6px 16px;
+   padding:6px 12px !important;
     border-radius:6px;
 }
+
+.contact-btn:hover{
+    color: #28BABF !important;
+}
+
 .popup-overlay{
     position:fixed;
     width:100%;

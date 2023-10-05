@@ -62,8 +62,8 @@ $lien=get_field('lien_google_maps', 161);
 		<div class="popup-details">
 			<div class="popup-address">
 				<p><b>Le lieu</b></p>
-				<?php echo $lieu; ?>
-				<a class="popup-link" href="<?php echo $lien; ?>" target="_blank">Voir sur Google Maps</a>
+				<?php echo $lieu; ?> 
+				<a class="popup-link" href="<?php echo $lien;?>" target="_blank">Voir sur Google Maps</a>
 			</div>
 			<div class="popup-address">
 				<p><b>La date</b></p>
@@ -73,7 +73,7 @@ $lien=get_field('lien_google_maps', 161);
 		<p class="popup-informations">Vous souhaitez plus d'informations concernant cet événement ?</p>
 		<?php
 		// On insère le formulaire de demandes de renseignements
-		do_shortcode('[contact-form-7 id="910" title="Formulaire salon New York"]');
+		echo do_shortcode('[contact-form-7 id="910" title="Formulaire salon New York"]'); // ajouter echo
 		?>
 	</div>
 </div>
@@ -81,9 +81,11 @@ $lien=get_field('lien_google_maps', 161);
 <!-- Code pour fermer la popup -->
 
 <script>
-$('.popup-close').click(function(){
-	$(this).parent().hide();
-})
+jQuery(function($) {	
+	$('.popup-close').click(function(){
+		$('.popup-overlay').hide(); // cibler la div '.popup-overlay' et non le parent
+	});
+});
 </script>
 
 
